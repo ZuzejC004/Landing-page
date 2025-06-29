@@ -1,0 +1,62 @@
+<section id="contacto">
+    <h2>Contáctanos</h2>
+    <form>
+      <input type="text" id="nombre" placeholder="Tu nombre" required />
+      <input type="email" id="email" placeholder="Tu correo" required />
+      <textarea placeholder="Mensaje"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+
+  </section>
+
+<style>
+    section {
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+form input, form textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button {
+  background: #0a2a4d;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 12px;
+   text-decoration: none;
+    color: aliceblue;
+}
+button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+section {
+  transform: translateY(20px);
+  transition: all 0.6s ease-in-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+/* function validarFormulario() {
+  const nombre = document.getElementById("nombre").value;
+  const email = document.getElementById("email").value;
+  if (!nombre || !email) {
+    alert("Por favor completa todos los campos.");
+    return false;
+  }
+  alert("¡Gracias por contactarnos!");
+  return true;  
+  } */
+    
+</script>

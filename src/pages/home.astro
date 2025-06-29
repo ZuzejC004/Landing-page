@@ -1,0 +1,94 @@
+---
+import nav from '../components/nav.astro';
+import Layout from '../layouts/Layout.astro';
+import Contacto from '../components/contacto.astro';
+import Servidor from '../components/servidor.astro';
+---
+
+<Layout>
+
+    <section id="nosotros">
+    <h2>¿Por qué elegirnos?</h2>
+    <p>Contamos con técnicos certificados, atención personalizada y tecnología de punta.</p>
+    <button><a href="nosotros">Ver más</a></button> 
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Instalación de cámaras de seguridad</li>
+      <li>Asesoría personalizada</li>
+      <li>Mantenimiento técnico</li>
+      <li>Monitoreo remoto</li>
+    </ul>
+  </section>
+ <Servidor></Servidor>
+  <Contacto></Contacto>
+
+ </Layout>   
+
+<style scoped>
+
+
+section {
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+form input, form textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button {
+  background: #0a2a4d;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+/* Animaciones suaves */
+section {
+  transform: translateY(20px);
+  transition: all 0.6s ease-in-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto en botones */
+button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+
+
+</style>
+
+<script>
+
+
+/*   function del (){
+    const content = document.querySelector('body');
+    
+    const interval = setTimeout(() => {
+        content.style.opacity = 0;    
+    }, 4000);
+  }
+
+  del(); */
+   
+
+</script>
+

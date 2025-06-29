@@ -1,8 +1,38 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import nav from '../components/nav.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-
 <Layout>
-    
+    <div class="servicio-card">
+  <h2>presupuestar</h2>
+  <p>para poder saber un aproximado de nuestros costos</p>
+  <button onclick="mostrarRegistro()">Solicitar Cotización</button>
+</div>
+
+<style>
+  button{
+    background: #0a2a4d;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 12px;
+   text-decoration: none;
+    color: aliceblue;
+  }
+  button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+</style>
+<script>
+
+function mostrarRegistro() {
+  // Lógica para guardar el servicio en localStorage o DB y mostrar formulario de registro
+  window.location.href = "/registro";
+}
+
+</script>
 </Layout>
+
+

@@ -1,115 +1,227 @@
-</body>
-<header class="navbar">
+<body>
+  <header class="navbar">
   <div class="navbar-brand">
-    <h1>INFORTECH 2204</h1>
-    <p>Protegiendo lo que más importa</p>
+    <a href="/" class="logo-link">INFORTECH</a>
   </div>
-</header>
-
-   <nav class="navbar-menu">
-    <ul>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/about">Acerca de</a></li>
-      <li><a href="/servicios">Servicios</a></li>
-      <li><a href="/contacts">Contacto</a></li>
+  <nav class="navbar-menu">
+    <ul class="nav-links">
+      <li><a href="/home" class="nav-link">Inicio</a></li>
+      <li><a href="/nosotros" class="nav-link">Nosotros</a></li>
+      <li><a href="/servicios" class="nav-link">Servicios</a></li>
     </ul>
-  </nav> 
+  </nav>
   <button class="navbar-toggle" aria-label="Abrir menú">
-    <span></span>
-    <span></span>
-    <span></span>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </button>
+  <div class="mobile-menu">
+    <nav>
+      <ul class="mobile-nav-links">
+        <li><a href="/home" class="mobile-nav-link">Inicio</a></li>
+        <li><a href="/nosotros" class="mobile-nav-link">Nosotros</a></li>
+        <li><a href="/servicios" class="mobile-nav-link">Servicios</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+ </header>
+ <div class="slider">
+  <img src="https://images.pexels.com/photos/3714318/pexels-photo-3714318.png" class="slide active" />
+  <img src="https://images.pexels.com/photos/17842843/pexels-photo-17842843.jpeg" class="slide" />
+  <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg" class="slide" />
+</div>
 </body>
 
-<style>
+
+ <style>
+  body{
+    background-color: rgb(228, 228, 255);
+  }
   .navbar {
-     background: linear-gradient(135deg, #0a2a4d, #1f3b5c);
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background-color: #0a2a4d;
+    box-shadow: 0 2px 4px rgb(255, 255, 255);
+    position: relative;
+    z-index: 10;
   }
 
-  .navbar-brand a {
-    color: white;
-    text-decoration: none;
-    font-size: 2rem;
+  .navbar-brand .logo-link {
+    font-size: 1.8rem;
     font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
   }
 
-  .navbar-menu ul {
+  .navbar-brand .logo-link:hover {
+    color: #007bff;
+  }
+
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .nav-links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 1.5rem; /* Espacio entre elementos */
+    gap: 2rem;
   }
 
-  .navbar-menu li a {
-    color: white;
+  .nav-link {
     text-decoration: none;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease-in-out;
   }
 
-  .navbar-menu li a:hover {
-    color: #00bcd4; /* Color al pasar el mouse */
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .nav-link:hover {
+    color: #007bff;
+  }
+
+  .nav-link:hover::before {
+    width: 100%;
   }
 
   .navbar-toggle {
-    display: none; /* Oculto por defecto en desktop, visible en móviles */
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    display: none;
+    padding: 0;
   }
 
-  .navbar-toggle span {
+  .hamburger {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hamburger span {
     display: block;
-    width: 25px;
     height: 3px;
-    background-color: white;
-    margin-bottom: 5px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
   }
 
-  /* Media Queries para Responsive */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s ease-in-out;
+    padding-top: 4rem;
+    z-index: 9;
+  }
+
+  .mobile-menu.open {
+    left: 0;
+  }
+
+  .mobile-nav-links {
+    list-style: none;
+    padding: 0 2rem;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #555;
+    transition: color 0.3s ease-in-out, padding-left 0.3s ease-in-out;
+  }
+
+  .mobile-nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav-link:hover {
+    color: #007bff;
+    padding-left: 1rem;
+  }
+  .slider {
+  position: relative;
+  max-width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  object-fit: cover;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+  /* Media query for mobile devices */
   @media (max-width: 768px) {
     .navbar-menu {
-      display: none; /* Oculta el menú en pantallas pequeñas por defecto */
-      flex-direction: column;
-      position: absolute;
-      top: 60px; /* Ajusta según la altura de tu navbar */
-      left: 0;
-      width: 100%;
-      background-color: #2e3999;
-      padding: 1rem 0;
-      text-align: center;
+      display: none;
     }
-
-    .navbar-menu.open {
-      display: flex; /* Muestra el menú cuando esté "abierto" */
-    }
-
-    .navbar-menu ul {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
     .navbar-toggle {
-      display: block; /* Muestra el botón de toggle en móviles */
+      display: block;
     }
   }
-</style>
+ </style>
 
-<script>
-  // Script para el toggle del menú en dispositivos móviles
+ <script>
   document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.querySelector('.navbar-toggle');
-    const navbarMenu = document.querySelector('.navbar-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const hamburger = document.querySelector('.hamburger');
 
-    if (toggleButton && navbarMenu) {
+    if (toggleButton && mobileMenu) {
       toggleButton.addEventListener('click', () => {
-        navbarMenu.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        
       });
     }
   });
-</script>
+
+  let index = 0;
+const slides = document.querySelectorAll(".slide");
+function showSlide() {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+  index = (index + 1) % slides.length;
+}
+  setInterval(showSlide, 4000); // Cambia cada 4 segundos
+ </script>

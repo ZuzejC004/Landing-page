@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
-    "astro": "^5.10.1",
-    "fulldev-ui": "^0.6.5"
+    "astro": "^5.10.1"
   }
 }
